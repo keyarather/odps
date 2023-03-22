@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PrescriptionController extends Controller
+class PaymentController extends Controller
 {
     public function list()
     {
-        return view('pages.prescription.list');
+        return view('pages.payment.list');
     }
     //
 }
+ 
