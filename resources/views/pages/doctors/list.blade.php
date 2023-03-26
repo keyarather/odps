@@ -28,6 +28,7 @@
                 <td>the Bird</td>
                 <td>@twitter</td>
             </tr>
+            <button type="button" class="btn btn-primary">Primary</button>
         </tbody>
     </table>
 @endsection

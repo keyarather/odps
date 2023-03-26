@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SpecialistController extends Controller
+class AdminController extends Controller
 {
     public function list()
     {
-        return view('pages.specialist.list');
+        return view('pages.admin.list');
     }
-
+    
 }

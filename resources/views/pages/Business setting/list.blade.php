@@ -1,7 +1,9 @@
 @extends('master')
 @section('content')
+
+
 <table class="table">
-  <thead>
+  <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -28,6 +30,7 @@
       <td>the Bird</td>
       <td>@twitter</td>
     </tr>
+    <button type="button" class="btn btn-primary">Primary</button>
   </tbody>
 </table>
 

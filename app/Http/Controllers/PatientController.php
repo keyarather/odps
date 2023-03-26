@@ -10,4 +10,11 @@ class PatientController extends Controller
     {
         return view('pages.patients.list');
     }
+       public function create()
+       {
+        return view('pages.patients.form');
+       }
+    
+
+    
 }

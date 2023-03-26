@@ -11,11 +11,11 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Doctor
                 </a>
-                <a class="nav-link" href="{{route('appointment.list') }}">
+                <a class="nav-link" href="{{route('patient.list') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Patient
                 </a>
-                <a class="nav-link" href="{{route('appointment.list') }}"
+                <a class="nav-link" href="{{route('appointment.list') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Appointment
                 </a>
@@ -35,13 +35,21 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Admin
                 </a>
-                <a class="nav-link" href=>
+                <a class="nav-link" href="{{route('report.list')}}">>
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Report
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('Businesssetting.list')}}">>
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Pages
+                    Business setting
+                </a>
+                <a class="nav-link" href="{{route('Report.lis}t') }">>">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    
+                </a>
+                <a class="nav-link" href="">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    
                 </a>
             </div>
         </div>

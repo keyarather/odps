@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-
+<a class="btn btn-primary" href="{{route('patient.create')}}">Create patient</a>
 <table class="table table-striped">
         <thead>
             <tr>
@@ -17,19 +17,9 @@
                 <td>Otto</td>
                 <td>@mdo</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
         </tbody>
     </table>
+
+
 
 @endsection
