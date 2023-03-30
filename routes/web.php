@@ -39,7 +39,7 @@ Route::get('/doctor/list',[DoctorController::class,'list'])->name('doctor.list')
 Route::get('/doctor/create',[DoctorController::class,'create'])->name('doctor.create');
 Route::post('/doctor/store',[DoctorController::class,'store'])->name('doctor.store');
 Route::get('/doctor/view/{id}',[DoctorController::class,'view'])->name('doctor.view');
-Route::get('/doctor/delete',[DoctorController::class,'delete'])->name('doctor.delete');
+Route::get('/doctor/delete/{id}',[DoctorController::class,'delete'])->name('doctor.delete');
 
 
 
