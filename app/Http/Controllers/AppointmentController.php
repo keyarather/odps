@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
-    public function appoList()
+    public function list()
     {
-        return view('pages.Appointment.list');
+        return view('pages.appointment.list');
+    }
+    public function create()
+    {
+        return view('pages.appointment.form');
     }
 }

@@ -1,34 +1,34 @@
 @extends('master')
 @section('content')
+
+<h2>Doctor Information</h2>
+<a class="btn btn-primary" href="{{route('doctor.create')}}">Add new</a>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Sl</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Department</th>
+                <th scope="col">Qualification</th>
+                <th scope="col">Action</th>
+
             </tr>
         </thead>
         <tbody>
+        @foreach($doctors as $data)
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">{{$data->id}}</th>
+                <td>{{$data->name}}</td>
+                 <td>{{$data->depertment}}</td>
+                 <td>{{$data->qualification}}</td>
+                 <td>
+                 <a class="btn btn-success" href="{{route('doctor.view',$data->id)}}">View</a>
+                 <a class="btn btn-primary" href="">Edit</a>
+                 <a class="btn btn-danger" href="{{route('doctor.delete',$data->id)}}">Delete</a>
+                 </td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
-            <button type="button" class="btn btn-primary">Primary</button>
+            
+           @endforeach
         </tbody>
     </table>
 @endsection

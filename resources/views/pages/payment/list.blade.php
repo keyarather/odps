@@ -1,9 +1,11 @@
 @extends('master')
 @section('content')
+<h2>Patient Details</h2>
+<a class="btn btn-primary" href="{{route('payment.create')}}">Add new</a>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col"></th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
       <th scope="col">Handle</th>

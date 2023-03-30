@@ -1,5 +1,7 @@
 @extends('master')
 @section('content')
+<h2>Admin Details</h2>
+<a class="btn btn-primary" href="{{route('admin.create')}}">Add new</a>
 <table class="table">
   <thead>
     <tr>

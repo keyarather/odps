@@ -1,5 +1,7 @@
 @extends('master')
 @section('content')
+<h2>prescription Details</h2>
+<a class="btn btn-primary" href="{{route('prescription.create')}}">Add new</a>
 <table class="table">
   <thead>
     <tr>

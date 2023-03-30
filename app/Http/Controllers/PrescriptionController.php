@@ -9,6 +9,13 @@ class PrescriptionController extends Controller
     public function list()
     {
         return view('pages.prescription.list');
+    
     }
-    //
+      public function create()
+      {
+         return view('pages.prescription.form');
+      }
+
+    
+    
 }

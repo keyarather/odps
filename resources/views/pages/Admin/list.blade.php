@@ -1,12 +1,16 @@
 @extends('master')
 @section('content')
+<h2>Patient Details</h2>
+<a class="btn btn-primary" href="{{route('admin.create')}}">Add new</a>
+
+
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Doctor Name</th>
+      <th scope="col">Department</th>
+      <th scope="col">contact number</th>
+      <th scope="col">Doctor type</th>
     </tr>
   </thead>
   <tbody>
@@ -16,19 +20,8 @@
       <td>Otto</td>
       <td>@mdo</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    <button type="button" class="btn btn-primary">Primary</button>
+    
+    
   </tbody>
 </table>
 
