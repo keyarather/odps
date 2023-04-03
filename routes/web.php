@@ -30,7 +30,12 @@ use  App\Http\Controllers\paymentController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [DashboardController::class, 'dashboard']);
+//for login
+Route::get('/login',[DashboardController::class,'login'])->name('login');
+Route::post('/dologin',[DashboardController::class,'dologin'])->name('dologin');
+//for auth
+Route::group(['middleware'=>'auth'], function(){
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('home');
 
 
 //Doctor
@@ -73,3 +78,7 @@ Route::get('/admin/create',[adminController::class,'create'])->name('admin.creat
 Route::get('/admin/list',[AdminController::class,'list'])->name('admin.list');
 //Report
 Route::get('/report/list',[ReportController::class,'list'])->name('report.list');
+
+});
+
+
