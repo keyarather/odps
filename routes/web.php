@@ -1,16 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PatientController;
+use  App\Http\Controllers\paymentController;
+use App\Http\Controllers\SpecialistController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\prescriptionController;
-use App\Http\Controllers\SpecialistController;
-Use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ReportController;
 use  App\Http\Controllers\BusinesssettingController;
-use  App\Http\Controllers\paymentController;
+use App\Http\Controllers\Backend\DashboardController;
 
 
 
@@ -31,54 +32,56 @@ use  App\Http\Controllers\paymentController;
 |
 */
 //for login
-Route::get('/login',[DashboardController::class,'login'])->name('login');
-Route::post('/dologin',[DashboardController::class,'dologin'])->name('dologin');
+Route::get('/login', [DashboardController::class, 'login'])->name('login');
+Route::post('/dologin', [DashboardController::class, 'dologin'])->name('dologin');
+Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
+//website
+Route::get('/home', [HomeController::class, 'home'])->name('homes');
+
+
 //for auth
-Route::group(['middleware'=>'auth'], function(){
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('home');
 
 
-//Doctor
-Route::get('/dashboard', [DashboardController::class, 'dashboardView']);
-Route::get('/doctor/list',[DoctorController::class,'list'])->name('doctor.list');
-Route::get('/doctor/create',[DoctorController::class,'create'])->name('doctor.create');
-Route::post('/doctor/store',[DoctorController::class,'store'])->name('doctor.store');
-Route::get('/doctor/view/{id}',[DoctorController::class,'view'])->name('doctor.view');
-Route::get('/doctor/delete/{id}',[DoctorController::class,'delete'])->name('doctor.delete');
+    //Doctor
+    Route::get('/dashboard', [DashboardController::class, 'dashboardView']);
+    Route::get('/doctor/list', [DoctorController::class, 'list'])->name('doctor.list');
+    Route::get('/doctor/create', [DoctorController::class, 'create'])->name('doctor.create');
+    Route::post('/doctor/store', [DoctorController::class, 'store'])->name('doctor.store');
+    Route::get('/doctor/view/{id}', [DoctorController::class, 'view'])->name('doctor.view');
+    Route::get('/doctor/delete/{id}', [DoctorController::class, 'delete'])->name('doctor.delete');
 
 
 
-//patient
-Route::get('/patient/create', [PatientController::class, 'create'])->name('patient.create');
-Route::get('/patient/list', [PatientController::class, 'list'])->name('patient.list');
-Route::post('/patient/store',[patientController::class,'store'])->name('patient.store');
+    //patient
+    Route::get('/patient/create', [PatientController::class, 'create'])->name('patient.create');
+    Route::get('/patient/list', [PatientController::class, 'list'])->name('patient.list');
+    Route::post('/patient/store', [patientController::class, 'store'])->name('patient.store');
 
-//Appointment
+    //Appointment
 
-Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
-Route::get('/appointment/create', [AppointmentController::class, 'create'])->name('appointment.create');
-Route::post('/patient/store',[patientController::class,'store'])->name('patient.store');
-//Prescription
-Route::get('/prescription/list',[PrescriptionController::class,'list'])->name('prescription.list');
-Route::get('/prescription/create',[prescriptionController::class,'create'])->name('prescription.create');
-Route::post('/patient/store',[patientController::class,'store'])->name('patient.store');
+    Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
+    Route::get('/appointment/create', [AppointmentController::class, 'create'])->name('appointment.create');
+    Route::post('/patient/store', [patientController::class, 'store'])->name('patient.store');
+    //Prescription
+    Route::get('/prescription/list', [PrescriptionController::class, 'list'])->name('prescription.list');
+    Route::get('/prescription/create', [prescriptionController::class, 'create'])->name('prescription.create');
+    Route::post('/patient/store', [patientController::class, 'store'])->name('patient.store');
 
-//specialist
-Route::get('/specialist/list',[SpecialistController::class,'list'])->name('specialist.list');
-//Payment
-Route::get('/payment/create',[paymentController::class,'create'])->name('payment.create');
-Route::get('/payment/list',[PaymentController::class,'list'])->name('payment.list');
-Route::post('/payment/store',[paymentController::class,'store'])->name('payment.store');
+    //specialist
+    Route::get('/specialist/list', [SpecialistController::class, 'list'])->name('specialist.list');
+    //Payment
+    Route::get('/payment/create', [paymentController::class, 'create'])->name('payment.create');
+    Route::get('/payment/list', [PaymentController::class, 'list'])->name('payment.list');
+    Route::post('/payment/store', [paymentController::class, 'store'])->name('payment.store');
 
-//Business setting
-Route::get('/businesssetting/list',[BusinesssettingController::class,'list'])->name('Businesssetting.list');
-//Admin
-Route::get('/admin/create',[adminController::class,'create'])->name('admin.create');
+    //Business setting
+    Route::get('/businesssetting/list', [BusinesssettingController::class, 'list'])->name('Businesssetting.list');
+    //Admin
+    Route::get('/admin/create', [adminController::class, 'create'])->name('admin.create');
 
-Route::get('/admin/list',[AdminController::class,'list'])->name('admin.list');
-//Report
-Route::get('/report/list',[ReportController::class,'list'])->name('report.list');
-
+    Route::get('/admin/list', [AdminController::class, 'list'])->name('admin.list');
+    //Report
+    Route::get('/report/list', [ReportController::class, 'list'])->name('report.list');
 });
-
-

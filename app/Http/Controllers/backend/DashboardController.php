@@ -21,22 +21,31 @@ class DashboardController extends Controller
     }
 
     public function dologin(Request $request){
+        
         $validate=Validator::make($request->all(),[
         'email'=>'required',
         'password'=>'required|min:5'
-
-
         ]);
+        
         if($validate->fails())
         {
             return redirect()->back();
         }
         $credentials=$request->only(['email','password']);
+        // dd($credentials);
         if(auth()->attempt($credentials)){
             
             return redirect()->route('home');
         }
         return redirect()->back();
 
+
+
+    }
+    public function logout(){
+        auth()->logout();
+        
+        return redirect()->route('home');
+        
     }
 }
