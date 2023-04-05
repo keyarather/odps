@@ -10,11 +10,11 @@ class PatientController extends Controller
     public function list()
     {
         $patients=Patient::all();
-        return view('pages.patients.list',compact('patients'));
+        return view('backend.pages.patients.list',compact('patients'));
     }
        public function create()
        {
-        return view('pages.patients.form');
+        return view('backend.pages.patients.form');
        }
        public function store(Request $request)
        {

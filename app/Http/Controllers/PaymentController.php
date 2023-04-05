@@ -8,11 +8,11 @@ class PaymentController extends Controller
 {
     public function list()
     {
-        return view('pages.payment.list');
+        return view('backend.pages.payment.list');
     }
     public function create()
     {
-        return view('pages.payment.form');
+        return view('backend.pages.payment.form');
     }
     public function store(request $request)
     {

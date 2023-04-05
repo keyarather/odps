@@ -8,12 +8,12 @@ class PrescriptionController extends Controller
 {
     public function list()
     {
-        return view('pages.prescription.list');
+        return view('backend.pages.prescription.list');
     
     }
       public function create()
       {
-         return view('pages.prescription.form');
+         return view('backend.pages.prescription.form');
       }
 
     

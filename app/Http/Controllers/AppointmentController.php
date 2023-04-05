@@ -8,10 +8,10 @@ class AppointmentController extends Controller
 {
     public function list()
     {
-        return view('pages.appointment.list');
+        return view('backend.pages.Appointment.list');
     }
     public function create()
     {
-        return view('pages.appointment.form');
+        return view('backend.pages.Appointment.form');
     }
 }

@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Frontend\HomeController;
+
+//Backend
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PatientController;
@@ -36,12 +38,12 @@ Route::get('/login', [DashboardController::class, 'login'])->name('login');
 Route::post('/dologin', [DashboardController::class, 'dologin'])->name('dologin');
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 //website
-Route::get('/home', [HomeController::class, 'home'])->name('homes');
+Route::get('/', [HomeController::class, 'home'])->name('homes');
 
 
 //for auth
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', [DashboardController::class, 'dashboard'])->name('home');
+    Route::get('/home', [DashboardController::class, 'dashboard'])->name('home');
 
 
     //Doctor
@@ -71,6 +73,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     //specialist
     Route::get('/specialist/list', [SpecialistController::class, 'list'])->name('specialist.list');
+    Route::get('/specialist/create', [SpecialistController::class, 'create'])->name('specialist.create');
+    Route::post('/specialist/store', [SpecialistController::class, 'store'])->name('specialist.store');
+
     //Payment
     Route::get('/payment/create', [paymentController::class, 'create'])->name('payment.create');
     Route::get('/payment/list', [PaymentController::class, 'list'])->name('payment.list');

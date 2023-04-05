@@ -10,11 +10,11 @@ class DoctorController extends Controller
     public function list()
     {
         $doctors = Doctor::all();
-        return view('pages.doctors.list',compact('doctors'));
+        return view('backend.pages.doctors.list',compact('doctors'));
     }
     public function create()
     {
-        return view('pages.doctors.form');
+        return view('backend.pages.doctors.form');
     }
     public function store (Request $request)
     {
@@ -34,7 +34,7 @@ class DoctorController extends Controller
     public function view($id)
     {
         $doctor=Doctor::find($id);
-        return view('pages.doctors.view',compact('doctor'));
+        return view('backend.doctors.view',compact('doctor'));
     }
 
     public function delete($id)

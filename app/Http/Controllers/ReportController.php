@@ -8,7 +8,7 @@ class ReportController extends Controller
 {
     public function list()
     {
-        Return view('pages.report.list');
+        Return view('backend.pages.report.list');
     }
     //
 }

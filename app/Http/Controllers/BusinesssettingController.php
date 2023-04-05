@@ -8,7 +8,7 @@ class BusinesssettingController extends Controller
 {
     public function list()
     {
-        return view('pages.business setting.list');
+        return view('backend.pages.business setting.list');
     }
     //
 }

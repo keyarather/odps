@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\Validator;
 class DashboardController extends Controller
 {
     public function dashboard(){
-        return view ('master');
+        return view ('backend.master');
     }
 
     public function dashboardView(){
-        return view ('pages.body');
+        return view ('backend.pages.body');
     }
     public function login()
     {
-        return view('pages.login');
+        return view('backend.pages.login');
     }
 
     public function dologin(Request $request){

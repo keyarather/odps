@@ -8,12 +8,12 @@ class AdminController extends Controller
 {
     public function list()
     {
-        return view('pages.admin.list');
+        return view('backend.pages.admin.list');
 
     }
     public function create ()
     {
-        return view('pages.admin.form');
+        return view('backend.pages.admin.form');
     }
     
 }
