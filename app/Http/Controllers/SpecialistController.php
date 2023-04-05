@@ -17,9 +17,12 @@ class SpecialistController extends Controller
 
     }
     public function store(Request $request){
-        Specialists::create([''])
+        Specialist::create([
 
+            'name'=>$request->name,
+            'contact_type'=>$request->consaltration,
+            'department'=>$request->department,
+        ]);
 
     }
-
 }

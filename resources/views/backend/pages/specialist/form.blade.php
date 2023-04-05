@@ -12,7 +12,7 @@
 
   <div class="form-group">
     <label for="contact_type">Contact_type</label>
-    <input type="Contact_type" name="contact" class="form-control" id="Contact_type" aria-describedby="emailHelp" placeholder="Contact_type">
+    <input type="Consaltration" name="consaltration" class="form-control" id="Consaltration" aria-describedby="emailHelp" placeholder="consaltration">
     <small id="emailHelp" class="form-text text-muted"></small>
   </div>
   <div class="form-group">
