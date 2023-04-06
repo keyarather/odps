@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home()
-        {
-            return view('frontend.file.master');
-        }
-    
+    {
+        return view('frontend.page.home.home');
+    }
 }

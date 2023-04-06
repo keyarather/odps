@@ -48,7 +48,7 @@
     <!-- ======= Hero Section ======= -->
 
 
-    <main id="main">
+    <main id="main" style="min-height:80vh">
 
         <!-- ======= Featured Services Section ======= -->
         @yield('content')

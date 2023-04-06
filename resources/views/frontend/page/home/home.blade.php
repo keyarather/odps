@@ -1,4 +1,4 @@
-@extends('frontent.file.master')
+@extends('frontend.file.master')
 @section('content')
 <!-- ======= Featured Services Section ======= -->
 <section id="featured-services" class="featured-services">
