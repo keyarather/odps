@@ -14,14 +14,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\prescriptionController;
 use  App\Http\Controllers\BusinesssettingController;
 use App\Http\Controllers\Backend\DashboardController;
-
-
-
-
-
-
-
-
+use App\Http\Controllers\Frontend\DoctorController as FrontendDoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +30,10 @@ use App\Http\Controllers\Backend\DashboardController;
 Route::get('/login', [DashboardController::class, 'login'])->name('login');
 Route::post('/dologin', [DashboardController::class, 'dologin'])->name('dologin');
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
-//website
+//website frontend
 Route::get('/', [HomeController::class, 'home'])->name('homes');
+ Route::get('/doctor',[FrontendDoctorController::class,'list'])->name('Doctor.list');
+ Route::get('/appointment',[FrontendAppointmentController::class,'list'])->name('appointment.list');
 
 
 //for auth

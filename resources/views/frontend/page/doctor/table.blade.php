@@ -1,5 +1,6 @@
-@extends('backend.master')
+@extends('frontend.file.master')
 @section('content')
+
     <h2>Doctor Information</h2>
     <a class="btn btn-primary" href="{{ route('doctor.create') }}">Add new</a>
     <table class="table table-striped">
@@ -21,10 +22,18 @@
                     <td>{{ $data->depertment }}</td>
                     <td>{{ $data->qualification }}</td>
                     <td>
-                      
+                        <a class="btn btn-success" href="">View</a>
+                        <a class="btn btn-primary" href="">Edit</a>
+                        <a class="btn btn-danger" href="">Delete</a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 @endsection
+
+
+
+
+
+

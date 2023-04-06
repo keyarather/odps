@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('depertment');
             $table->string('qualification');
-            $table->timestamps();
+            $table->string('mobile_number');
+            
         });
     }
 
