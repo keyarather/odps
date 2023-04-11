@@ -5,6 +5,8 @@
 <table class="table table-striped">
         <thead>
             <tr>
+                <th scope="col">SL</th>
+                <th scope="col">Image</th>
                 <th scope="col">name</th>
                 <th scope="col">department</th>
                 <th scope="col">Mobile_No</th>
@@ -14,10 +16,14 @@
         <tbody>
         @foreach($patients as $data)
             <tr>
-                <th scope="row">{{$data->name}}</th>
+                <th scope="row">{{$data->id}}</th>
+                <th>
+                    <img width="70px" src="{{url('/uploads/update/category/'.$data->image)}}" alt="NO Image">
+                </th>
+                <th>{{$data->name}}</th>
                 <td>{{$data->department}}</td>
-                 <td>{{$data->mobile_no}}</td>
-                 <td>{{$data->p_email}}</td>
+                <td>{{$data->mobile_no}}</td>
+                <td>{{$data->p_email}}</td>
             </tr>
             @endforeach
         </tbody>

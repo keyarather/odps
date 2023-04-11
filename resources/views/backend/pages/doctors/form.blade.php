@@ -18,6 +18,10 @@
     <label for="qualification">Qualification</label>
     <input type="department" name="qualification" class="form-control" id="department" placeholder="department">
   </div>
+  <div class="form-group">
+    <label for="mobile_number">mobile_number</label>
+    <input type="number" name="mobile_number" class="form-control" id="mobile_number" placeholder="mobile_number">
+  </div>
  
  
   

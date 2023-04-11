@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('department');
-            $table->integer('mobile_no');
-            $table->string('P_email');
+            $table->string('mobile_no');
+            $table->string('image');
+            $table->string('p_email');
             
             $table->timestamps();
 

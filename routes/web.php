@@ -49,11 +49,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/doctor/view/{id}', [DoctorController::class, 'view'])->name('doctor.view');
     Route::get('/doctor/delete/{id}', [DoctorController::class, 'delete'])->name('doctor.delete');
 
-
+// doctor
 
     //patient
-    Route::get('/patient/create', [PatientController::class, 'create'])->name('patient.create');
     Route::get('/patient/list', [PatientController::class, 'list'])->name('patient.list');
+    Route::get('/patient/create', [PatientController::class, 'create'])->name('patient.create');
     Route::post('/patient/store', [patientController::class, 'store'])->name('patient.store');
 
     //Appointment

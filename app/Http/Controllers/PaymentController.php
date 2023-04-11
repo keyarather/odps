@@ -14,8 +14,5 @@ class PaymentController extends Controller
     {
         return view('backend.pages.payment.form');
     }
-    public function store(request $request)
-    {
-        
-    }
+    
 }

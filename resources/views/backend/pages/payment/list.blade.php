@@ -1,4 +1,4 @@
-@extends('master')
+@extends('backend.master')
 @section('content')
 <h2>Patient Details</h2>
 <a class="btn btn-primary" href="{{route('payment.create')}}">Add new</a>
