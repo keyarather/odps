@@ -14,6 +14,8 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\prescriptionController;
 use  App\Http\Controllers\BusinesssettingController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\chambeController;
+use App\Http\Controllers\ChamberController;
 use App\Http\Controllers\Frontend\DoctorController as FrontendDoctorController;
 
 /*
@@ -32,8 +34,8 @@ Route::post('/dologin', [DashboardController::class, 'dologin'])->name('dologin'
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 //website frontend
 Route::get('/', [HomeController::class, 'home'])->name('homes');
- Route::get('/doctor',[FrontendDoctorController::class,'list'])->name('Doctor.list');
- Route::get('/appointment',[FrontendAppointmentController::class,'list'])->name('appointment.list');
+Route::get('/doctor', [FrontendDoctorController::class, 'list'])->name('Doctor.list');
+Route::get('/appointment', [FrontendAppointmentController::class, 'list'])->name('appointment.list');
 
 
 //for auth
@@ -49,7 +51,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/doctor/view/{id}', [DoctorController::class, 'view'])->name('doctor.view');
     Route::get('/doctor/delete/{id}', [DoctorController::class, 'delete'])->name('doctor.delete');
 
-// doctor
+    // doctor
 
     //patient
     Route::get('/patient/list', [PatientController::class, 'list'])->name('patient.list');
@@ -67,14 +69,18 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/patient/store', [patientController::class, 'store'])->name('patient.store');
 
     //specialist
-    Route::get('/specialist/list', [SpecialistController::class, 'list'])->name('specialist.list');
-    Route::get('/specialist/create', [SpecialistController::class, 'create'])->name('specialist.create');
-    Route::post('/specialist/store', [SpecialistController::class, 'store'])->name('specialist.store');
+    Route::get('/specialist/list', [SpecialistController::class, 'list'])->name("specialist.list");
 
+    Route::get('/specialist/form', [SpecialistController::class, 'form'])->name("specialist.form");
+    Route::post('/specialist/store', [SpecialistController::class, 'store'])->name("specialist.store");
     //Payment
     Route::get('/payment/create', [paymentController::class, 'create'])->name('payment.create');
     Route::get('/payment/list', [PaymentController::class, 'list'])->name('payment.list');
     Route::post('/payment/store', [paymentController::class, 'store'])->name('payment.store');
+    //chamber
+    Route::get('/chamber/list', [ChamberController::class, 'list'])->name('chamber.list');
+    Route::get('chamber/form', [ChamberController::class, 'list'])->name('chamber.form');
+    Route::post('chamber/store', [ChamberController::class, 'store'])->name('chamber.store');
 
     //Business setting
     Route::get('/businesssetting/list', [BusinesssettingController::class, 'list'])->name('Businesssetting.list');

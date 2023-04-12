@@ -1,37 +1,40 @@
 @extends('backend.master')
 @section('content')
 <h2>Specialist Details</h2>
-<a class="btn btn-primary" href="{{route('specialist.create')}}">Add new</a>
+<a class="btn btn-primary" href="{{route('specialist.form')}}">Add new</a>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">SL</th>
+
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">status</th>
+      <th scope="col">specialist_at</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($list as $key=>$data)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$key+$list->firstItem()}}</th>
+
+      <td>{{$data->name}}</td>
+      <td>{{$data->status}}</td>
+      <td>{{$data->specialist_at}}</td>
+      <td>
+        <a href="" class="btn btn-primary">view</a>
+        <a href="" class="btn btn-primary">Delete</a>
+        <a href="" class="btn btn-primary">Edit</a>
+      </td>
+
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
   </tbody>
-</table>
+  </table>
+
+{{$list->links()}}
 
 
-@endsection
+
+  @endsection
