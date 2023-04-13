@@ -9,7 +9,9 @@
             <th scope="col">Name</th>
             <th scope="col">Department</th>
             <th scope="col">Qualification</th>
+            <th scope="col">Phone</th>
             <th scope="col">Action</th>
+            <th scope="col">specialist_at</th>
 
         </tr>
     </thead>
@@ -17,10 +19,12 @@
         @foreach ($doctors as $data)
         <tr>
             <th scope="row">{{ $data->id }}</th>
-            <td>{{ $data->Designnation }}</td>
-            <td>{{ $data->doctor }}</td>
+            <td>{{ $data->name }}</td>
             <td>{{ $data->department }}</td>
-            <td>{{ $data->department }}</td>
+            <td>{{ $data->qualification }}</td>
+            <td>{{ $data->mobile_number }}</td>
+            
+            <td>{{ $data->specialist_at}}</td>
             
         </tr>
         @endforeach

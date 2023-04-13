@@ -22,9 +22,9 @@ class DoctorController extends Controller
          Doctor::create([
 
             'name'=>$request->name,
-            'depertment'=>$request->department,
+            'department'=>$request->department,
             'qualification'=>$request->qualification,
-
+            'mobile_number'=>$request->mobile_number,   
          ]);
          return redirect()->route('doctor.list');
 

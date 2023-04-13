@@ -8,6 +8,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PatientController;
 use  App\Http\Controllers\paymentController;
+use  App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SpecialistController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
@@ -53,11 +54,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     // doctor
 
-    //patient
-    Route::get('/patient/list', [PatientController::class, 'list'])->name('patient.list');
-    Route::get('/patient/create', [PatientController::class, 'create'])->name('patient.create');
-    Route::post('/patient/store', [patientController::class, 'store'])->name('patient.store');
-
     //Appointment
 
     Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
@@ -79,7 +75,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/payment/store', [paymentController::class, 'store'])->name('payment.store');
     //chamber
     Route::get('/chamber/list', [ChamberController::class, 'list'])->name('chamber.list');
-    Route::get('chamber/form', [ChamberController::class, 'list'])->name('chamber.form');
+    Route::get('/chamber/form', [ChamberController::class, 'form'])->name('chamber.form');
     Route::post('chamber/store', [ChamberController::class, 'store'])->name('chamber.store');
 
     //Business setting
@@ -90,4 +86,27 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/list', [AdminController::class, 'list'])->name('admin.list');
     //Report
     Route::get('/report/list', [ReportController::class, 'list'])->name('report.list');
+    
+    
+    //Department
+    Route::group(['prefix'=>'department'],function(){
+        Route::get('/list',[DepartmentController::class,'list'])->name('department.list');
+        Route::get('/form',[DepartmentController::class,'form'])->name('department.form');
+        Route::post('/store',[DepartmentController::class,'store'])->name('department.store');
+        Route::get('/edit/{id}',[DepartmentController::class,'edit'])->name('department.edit');
+        Route::put('/update/{id}',[DepartmentController::class,'update'])->name('department.update');
+        Route::get('/delete/{id}', [DepartmentController::class,'delete'])->name('department.delete');
+
+    });
+
+
+    //Patient
+    Route::group(['prefix'=>'patient'],function(){
+        Route::get('/list', [PatientController::class, 'list'])->name('patient.list');
+        Route::get('/create', [PatientController::class, 'create'])->name('patient.create');
+        Route::post('/store', [patientController::class, 'store'])->name('patient.store');
+        Route::get('/edit/{id}',[PatientController::class,'edit'])->name('patient.edit');
+        Route::put('/update/{id}',[PatientController::class,'update'])->name('patient.update');
+
+    });
 });

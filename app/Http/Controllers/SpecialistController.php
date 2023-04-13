@@ -21,24 +21,23 @@ class SpecialistController extends Controller
     public function store(Request $req){
 
 
-Specialist::create([
+    Specialist::create([
 
-"id"=>$req->id,
-"name"=>$req->name,
-"status"=>$req->status,
-"specialist_at"=>$req->specialist_at,
-
+    "name"=>$req->name,
+    "status"=>$req->status,
+    "specialist_at"=>$req->specialist_at,
 
 
 
 
 
-]);
+
+    ]);
 return redirect()->route('specialist.list');
 
 
 
 
     }
-   
+
 }

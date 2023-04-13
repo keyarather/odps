@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('content')
-<h2>Specialist Details</h2>
+<h2>Chamber</h2>
 <a class="btn btn-primary" href="{{route('chamber.form')}}">Add new</a>
 <table class="table">
     <thead>

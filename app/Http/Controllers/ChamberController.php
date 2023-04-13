@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chamber;
+use App\Models\Chember;
 use Illuminate\Http\Request;
 
 class ChamberController extends Controller
@@ -20,9 +20,9 @@ class ChamberController extends Controller
 
         //dd($request->all());
 
-        Chamber::create([
+        Chember::create([
         
-            "id"=>$request->id,
+            
             "name"=>$request->name,
             "address"=>$request->address,
             "location"=>$request->location,

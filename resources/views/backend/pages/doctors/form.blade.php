@@ -14,6 +14,11 @@
     <label for="department">Department</label>
     <input type="department" name="department" class="form-control" id="department" placeholder="department">
   </div>
+
+  <div class="form-group">
+    <label for="specialist_at">specialist_at</label>
+    <input type="specialist_at" name="specialist_at" class="form-control" id="specialist_at" placeholder="specialist_at">
+  </div>
   <div class="form-group">
     <label for="qualification">Qualification</label>
     <input type="department" name="qualification" class="form-control" id="department" placeholder="department">

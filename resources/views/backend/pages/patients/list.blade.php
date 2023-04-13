@@ -7,10 +7,11 @@
             <tr>
                 <th scope="col">SL</th>
                 <th scope="col">Image</th>
-                <th scope="col">name</th>
-                <th scope="col">department</th>
-                <th scope="col">Mobile_No</th>
-                <th scope="col">p_email</th>
+                <th scope="col">Name</th>
+                <th scope="col">Department</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -21,9 +22,14 @@
                     <img width="70px" src="{{url('/uploads/update/category/'.$data->image)}}" alt="NO Image">
                 </th>
                 <th>{{$data->name}}</th>
-                <td>{{$data->department}}</td>
-                <td>{{$data->mobile_no}}</td>
-                <td>{{$data->p_email}}</td>
+                <td>{{$data->department_id}}</td>
+                <td>{{$data->mobile}}</td>
+                <td>{{$data->email}}</td>
+                <td>
+                    <a class="btn btn-primary" href="">View</a>
+                    <a class="btn btn-success" href="{{route('patient.edit',$data->id)}}">Edit</a>
+                    <a class="btn btn-danger" href="">Delete</a>
+                </td>
             </tr>
             @endforeach
         </tbody>

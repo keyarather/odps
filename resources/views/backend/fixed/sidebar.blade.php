@@ -36,25 +36,9 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Payment
                 </a>
-                <a class="nav-link" href="{{route('admin.list') }}">>
+                <a class="nav-link" href="{{route('department.list') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Admin
-                </a>
-                <a class="nav-link" href="{{route('report.list')}}">>
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Report
-                </a>
-                <a class="nav-link" href="{{route('Businesssetting.list')}}">>
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Business setting
-                </a>
-                <a class="nav-link" href="{{route('Report.lis}t') }">>">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    
-                </a>
-                <a class="nav-link" href="">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    
+                    Department
                 </a>
             </div>
         </div>
