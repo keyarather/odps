@@ -34,7 +34,7 @@ Route::get('/login', [DashboardController::class, 'login'])->name('login');
 Route::post('/dologin', [DashboardController::class, 'dologin'])->name('dologin');
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 //website frontend
-Route::get('/', [HomeController::class, 'home'])->name('homes');
+Route::get('/', [HomeController::class, 'web'])->name('website');
 Route::get('/doctor', [FrontendDoctorController::class, 'list'])->name('Doctor.list');
 Route::get('/appointment', [FrontendAppointmentController::class, 'list'])->name('appointment.list');
 
@@ -58,7 +58,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
     Route::get('/appointment/create', [AppointmentController::class, 'create'])->name('appointment.create');
-    Route::post('/patient/store', [patientController::class, 'store'])->name('patient.store');
+    Route::post('/appointment/store', [AppointmentController::class, 'store'])->name('appointment.store');
     //Prescription
     Route::get('/prescription/list', [PrescriptionController::class, 'list'])->name('prescription.list');
     Route::get('/prescription/create', [prescriptionController::class, 'create'])->name('prescription.create');

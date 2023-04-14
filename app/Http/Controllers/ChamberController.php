@@ -23,9 +23,10 @@ class ChamberController extends Controller
         Chember::create([
         
             
-            "name"=>$request->name,
-            "address"=>$request->address,
-            "location"=>$request->location,
+            $table->id();
+            $table->string("name");
+            $table->string("address");
+            $table->timestamps();
         
             ]);
             return redirect()->route('chamber.list');

@@ -17,15 +17,16 @@
     </thead>
     <tbody>
         @foreach ($doctors as $data)
+
         <tr>
             <th scope="row">{{ $data->id }}</th>
             <td>{{ $data->name }}</td>
             <td>{{ $data->department }}</td>
             <td>{{ $data->qualification }}</td>
             <td>{{ $data->mobile_number }}</td>
-            
-            <td>{{ $data->specialist_at}}</td>
-            
+
+            <td>{{ $data->specialist->name}}</td>
+
         </tr>
         @endforeach
     </tbody>

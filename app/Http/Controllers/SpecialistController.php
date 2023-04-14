@@ -9,35 +9,21 @@ class SpecialistController extends Controller
 {
     public function list()
     {
-        $list=Specialist::paginate(5);
-        return view('backend.pages.specialist.list',compact('list'));
-
+        $list = Specialist::paginate(5);
+        return view('backend.pages.specialist.list', compact('list'));
     }
 
-    public function form(){
+    public function form()
+    {
         return view('backend.pages.specialist.form');
-
     }
-    public function store(Request $req){
+    public function store(Request $req)
+    {
 
 
-    Specialist::create([
-
-    "name"=>$req->name,
-    "status"=>$req->status,
-    "specialist_at"=>$req->specialist_at,
-
-
-
-
-
-
-    ]);
-return redirect()->route('specialist.list');
-
-
-
-
+        Specialist::create([
+            "name" => $req->name
+        ]);
+        return redirect()->route('specialist.list');
     }
-
 }

@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home()
+    public function web()
     {
-        return view('frontend.page.home.home');
+        $doctors = Doctor::all();
+        return view('frontend.file.webhome', compact('doctors'));
     }
 }

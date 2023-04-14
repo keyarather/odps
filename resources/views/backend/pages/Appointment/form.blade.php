@@ -1,14 +1,31 @@
 @extends('backend.master')
-@section('content')<form>
+@section('content')
+<form action="{{route('appointment.store')}}"></form>
+@csrf
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label for="your name">your name</label>
+    <input type="text" name="name" class="form-control"
+     id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <label for="email">email</label>
+      <input type="email" name="email" class="form-control" id="email" placeholder="email">
+    </div>
+  <div class="form-group">
+    <label for="your phone">your phone</label>
+    <input type="tel" name="phone" class="your phone" id="exampleInputPassword1" placeholder="your phone">
+
   </div>
+  <div class="form-group">
+    <label for="">Date</label>
+    <input type="date" name="date" class="your phone" id="exampleInputPassword1" placeholder="your phone">
+
+  </div>
+  
+  <select name="appointment_id" id="" class="form-control">
+      
+      </select>
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
