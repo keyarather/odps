@@ -1,6 +1,8 @@
 @extends('backend.master')
 @section('content')
-<form action="{{route('appointment.store')}}"></form>
+<form action="{{route('appointment.store')}}">
+
+
 @csrf
   <div class="form-group">
     <label for="your name">your name</label>
@@ -23,7 +25,7 @@
 
   </div>
   
-  <select name="appointment_id" id="" class="form-control">
+  <select name="appointment_id" id="" name="appointment_id" class="form-control">
       
       </select>
   

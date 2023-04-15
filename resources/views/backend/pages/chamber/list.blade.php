@@ -14,12 +14,11 @@
         </tr>
     </thead>
     <tbody>
-        
+        @foreach($chember as $data)
         <tr>
             <th scope="row">1</th>
-
-            <td>Keya</td>
-            <td>Uttara</td>
+            <td>{{$data->name}}</td>
+            <td>{{$data->address}}</td>
             <td>Dhaka</td>
             <td>
                 <a href="" class="btn btn-primary">view</a>
@@ -28,7 +27,7 @@
             </td>
 
         </tr>
-
+        @endforeach
     </tbody>
 </table>
 

@@ -1,21 +1,36 @@
+
 @extends('backend.master')
 @section('content')
-<h2>Appointment Details</h2>
+<h2>Chamber</h2>
 <a class="btn btn-primary" href="{{route('appointment.create')}}">Add new</a>
-
-   <table class="table table-striped">
-        
-           <thead>
-                <tr>
+<table class="table">
+    <thead>
+    <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Appointment_id</th>
                 </tr>
-            </thead>
-            <tbody>
-               
-            </tbody>
-        </table>
-    </div>
+    </thead>
+    <tbody>
+        @foreach($appo as $data)
+        <tr>
+            <th scope="row">1</th>
+            <td>{{$data->email}}</td>
+            <td>{{$data->phone}}</td>
+            <td>{{$data->date}}</td>
+            <td>{{$data->appointment_id}}</td>
+            <td>
+                <a href="" class="btn btn-primary">view</a>
+                <a href="" class="btn btn-primary">Delete</a>
+                <a href="" class="btn btn-primary">Edit</a>
+            </td>
+
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
 @endsection

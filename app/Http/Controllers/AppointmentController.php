@@ -8,11 +8,13 @@ class AppointmentController extends Controller
 {
     public function list()
     {
-        return view('backend.pages.Appointment.list');
+        $appo=Appointment::all();
+        return view('backend.pages.Appointment.list',compact('appo'));
     }
     public function create()
     {
-        return view('backend.pages.Appointment.form');
+        $appo=Appointment::all();
+        return view('backend.pages.Appointment.form',compact('appo'));
     }
     public function store(request $request)
     {

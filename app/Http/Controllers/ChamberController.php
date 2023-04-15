@@ -7,29 +7,22 @@ use Illuminate\Http\Request;
 
 class ChamberController extends Controller
 {
-    public function list(){
-
-        return view('backend.pages.chamber.list');
-
-
+    public function list()
+    {
+        $chember = Chember::all();
+        return view('backend.pages.chamber.list', compact("chember"));
     }
-    public function form(){
+    public function form()
+    {
         return view('backend.pages.chamber.form');
     }
-    public function store(request $request){
-
-        //dd($request->all());
+    public function store(request $request)
+    {
 
         Chember::create([
-        
-            
-            $table->id();
-            $table->string("name");
-            $table->string("address");
-            $table->timestamps();
-        
-            ]);
-            return redirect()->route('chamber.list');
-            
+            "address" => $request->address,
+            "name" => $request->name
+        ]);
+        return redirect()->route('chamber.list');
     }
 }
