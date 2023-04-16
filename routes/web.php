@@ -15,8 +15,8 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\prescriptionController;
 use  App\Http\Controllers\BusinesssettingController;
 use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\chambeController;
-use App\Http\Controllers\ChamberController;
+use App\Http\Controllers\ChambeController;
+use App\Http\Controllers\RgistrationController;
 use App\Http\Controllers\Frontend\DoctorController as FrontendDoctorController;
 
 /*
@@ -37,6 +37,8 @@ Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 Route::get('/', [HomeController::class, 'web'])->name('website');
 Route::get('/doctor', [FrontendDoctorController::class, 'list'])->name('Doctor.list');
 Route::get('/appointment', [FrontendAppointmentController::class, 'list'])->name('appointment.list');
+Route::post('/registration',[HomeController::class, 'registrationform'])->name('registration.form');
+Route::get('/registration',[HomeController::class, 'registrationformshow'])->name('registrationformshow');
 
 
 //for auth

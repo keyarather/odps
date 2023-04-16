@@ -13,4 +13,15 @@ class HomeController extends Controller
         $doctors = Doctor::all();
         return view('frontend.file.webhome', compact('doctors'));
     }
+
+    public function registrationform()
+    {
+        return view('frontend.page.registrationform');
+    }
+    public function registrationformshow(){
+
+
+        Registration::
+
+    }
 }

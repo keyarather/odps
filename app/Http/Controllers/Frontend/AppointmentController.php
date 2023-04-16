@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
-    public function list (){
-        return view(frontend.page.appointment.table);
+    public function list()
+    {
+        return view('frontend.page.appointment.table');
     }
 }
