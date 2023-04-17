@@ -37,8 +37,8 @@ Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 Route::get('/', [HomeController::class, 'web'])->name('website');
 Route::get('/doctor', [FrontendDoctorController::class, 'list'])->name('Doctor.list');
 Route::get('/appointment', [FrontendAppointmentController::class, 'list'])->name('appointment.list');
-Route::post('/registration',[HomeController::class, 'registrationform'])->name('registration.form');
-Route::get('/registration',[HomeController::class, 'registrationformshow'])->name('registrationformshow');
+Route::get('/registration',[HomeController::class, 'registrationform'])->name('registration.form');
+Route::post('/registration/form',[HomeController::class, 'registrationformshow'])->name('registrationformshow');
 
 
 //for auth

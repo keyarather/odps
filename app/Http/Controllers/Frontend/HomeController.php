@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,10 +19,24 @@ class HomeController extends Controller
     {
         return view('frontend.page.registrationform');
     }
-    public function registrationformshow(){
+    public function registrationformshow(Request $request)
+    {
 
 
-        Registration::
 
+        User::create([
+            "first_name" => $request->first_name,
+            "last_name" => $request->last_name,
+            "birthday" => $request->birthday,
+            "gender" => $request->gender,
+            "email" => $request->email,
+            "phone Number" => $request->phone_name,
+
+
+        ]);
+
+
+
+        return redirect()->back();
     }
 }
