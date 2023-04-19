@@ -1,7 +1,7 @@
 
 @extends('backend.master')
 @section('content')
-<h2>Chamber</h2>
+<h2>Appointment</h2>
 <a class="btn btn-primary" href="{{route('appointment.create')}}">Add new</a>
 <table class="table">
     <thead>

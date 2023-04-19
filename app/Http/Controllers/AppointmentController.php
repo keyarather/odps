@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
+   
     public function list()
     {
         $appo=Appointment::all();
@@ -28,6 +29,7 @@ class AppointmentController extends Controller
             "appointment_id"=>$request->appointment_id,
 
        ]);
+       
 
        return redirect()->back();
 

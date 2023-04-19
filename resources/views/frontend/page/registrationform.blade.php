@@ -75,7 +75,7 @@
                 <div class="col-md-6 mb-4 pb-2">
 
                   <div class="form-outline">
-                    <input type="tel" name="phone-number" id="phoneNumber" class="form-control form-control-lg" />
+                    <input type="tel" name="phone_number" id="phoneNumber" class="form-control form-control-lg" />
                     <label class="form-label" for="phoneNumber">Phone Number</label>
                   </div>
 

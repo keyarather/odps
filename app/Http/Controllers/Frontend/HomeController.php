@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use App\Models\Registrationform;
 use App\Models\User;
 use Illuminate\Http\Request;
+
+use function GuzzleHttp\Promise\all;
 
 class HomeController extends Controller
 {
@@ -22,15 +25,14 @@ class HomeController extends Controller
     public function registrationformshow(Request $request)
     {
 
-
-
-        User::create([
+        // dd($request->all());
+        Registrationform::create([
             "first_name" => $request->first_name,
             "last_name" => $request->last_name,
             "birthday" => $request->birthday,
             "gender" => $request->gender,
             "email" => $request->email,
-            "phone Number" => $request->phone_name,
+            "phone_number" => $request->phone_number,
 
 
         ]);
