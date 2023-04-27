@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('department');
             $table->string('qualification');
             $table->string('mobile_number');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

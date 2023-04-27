@@ -39,6 +39,6 @@ class HomeController extends Controller
 
 
 
-        return redirect()->back();
+        return redirect()->route("login");
     }
 }

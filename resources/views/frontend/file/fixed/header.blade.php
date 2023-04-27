@@ -9,14 +9,14 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
 
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
-          <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
+          <li><a class="nav-link scrollto active" href="{{url('/')}}#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/')}}#about">About</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/')}}#departments">Departments</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/')}}#doctors">Doctors</a></li>
 
 
 
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/')}}#contact">Contact</a></li>
           @guest
           <li><a class="nav-link scrollto" href="{{route('registration.form')}}">Registration</a></li>
           <li>

@@ -15,9 +15,9 @@
                 </tr>
     </thead>
     <tbody>
-        @foreach($appo as $data)
+        @foreach($appo as $key => $data)
         <tr>
-            <th scope="row">1</th>
+            <th scope="row">{{$key+1}}</th>
             <td>{{$data->email}}</td>
             <td>{{$data->phone}}</td>
             <td>{{$data->date}}</td>

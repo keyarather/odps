@@ -20,6 +20,12 @@ class DoctorController extends Controller
     }
     public function store(Request $request)
     {
+        $filename = null;
+        if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $filename = date('ymdhis') . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('/update/doctor', $filename);
+        }
 
         Doctor::create([
 
@@ -28,6 +34,7 @@ class DoctorController extends Controller
             'department' => $request->department,
             'qualification' => $request->qualification,
             'mobile_number' => $request->mobile_number,
+            "image" =>  $filename
         ]);
         return redirect()->route('doctor.list');
     }

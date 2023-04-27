@@ -4,11 +4,15 @@
 
 
 
-  <form action={{route('doctor.store')}} method='post'>
+  <form action={{route('doctor.store')}} method='post' enctype="multipart/form-data">
     @csrf
     <div class="form-group">
       <label for="name">Doctor Name</label>
       <input type="name" name="name" class="form-control" id="name" placeholder=" Name">
+    </div>
+    <div class="form-group">
+      <label for="image">image</label>
+      <input type="file" name="image" class="form-control" id="image" placeholder=" image">
     </div>
     <div class="form-group">
       <label for="department">Department</label>

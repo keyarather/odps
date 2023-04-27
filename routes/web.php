@@ -80,6 +80,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/appointment/create', [AppointmentController::class, 'create'])->name('appointment.create');
     Route::post('/appointment/store', [AppointmentController::class, 'store'])->name('appointment.store');
     Route::get('/appointment/form', [AppointmentController::class, 'form'])->name('appointment.form');
+   
 
     //Prescription
     Route::get('/prescription/list', [PrescriptionController::class, 'list'])->name('prescription.list');

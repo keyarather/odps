@@ -366,7 +366,7 @@
             @foreach($doctors as $doctor)
             <div class="col-lg-6">
                 <div class="member d-flex align-items-start">
-                    <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+                    <div class="pic"><img src="{{url('uploads/update/doctor',$doctor->image)}}" class="img-fluid" alt=""></div>
                     <div class="member-info">
                         <h4>{{$doctor->name}}</h4>
                         <span>{{$doctor->department}}</span>

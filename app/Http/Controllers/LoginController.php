@@ -13,7 +13,6 @@ class LoginController extends Controller
         if (auth()->attempt($credential)) {
             return redirect()->back();
         }
-
         return redirect()->back();
     }
 
