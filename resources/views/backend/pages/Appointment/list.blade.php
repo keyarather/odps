@@ -23,9 +23,9 @@
             <td>{{$data->date}}</td>
             <td>{{$data->appointment_id}}</td>
             <td>
-                <a href="" class="btn btn-primary">view</a>
-                <a href="" class="btn btn-primary">Delete</a>
-                <a href="" class="btn btn-primary">Edit</a>
+                <a href="" class="{{route('appointment.delete', $data->id)}}">view</a>
+                <a href="" class="{{route('appointment.delete', $data->id)}}">Delete</a>
+                <a href="" class="{{route('appointment.delete', $data->id)}}">Edit</a>
             </td>
 
         </tr>

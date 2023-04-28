@@ -19,19 +19,24 @@ class AppointmentController extends Controller
     }
     public function store(request $request)
     {
-
+//dd($request->all())
       
        Appointment::create([
         "name"=>$request->name,
             "email"=>$request->email,
             "phone"=>$request->phone,
             "date"=>$request->date,
-            "appointment_id"=>$request->appointment_id,
+       
 
        ]);
        
 
        return redirect()->back();
 
+    }
+    public function delete($id)
+    {
+        Appointment::findOrFail($id)->delete();
+        return to_route('appointment.list');
     }
 }

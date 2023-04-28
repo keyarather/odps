@@ -26,19 +26,21 @@ class HomeController extends Controller
     {
 
         // dd($request->all());
-        Registrationform::create([
+        user::create([
             "first_name" => $request->first_name,
             "last_name" => $request->last_name,
             "birthday" => $request->birthday,
             "gender" => $request->gender,
             "email" => $request->email,
-            "phone_number" => $request->phone_number,
+            "phone" => $request->phone,
+            "password" => bcrypt($request->password),
+            "role" => $request->role
 
 
         ]);
 
 
 
-        return redirect()->route("login");
+        return redirect()->route("website");
     }
 }

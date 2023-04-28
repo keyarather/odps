@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('content')
-<form action="{{route('appointment.store')}}">
+<form action="{{route('appointment.store')}}" method="post" >
 
 
 @csrf
@@ -25,9 +25,7 @@
 
   </div>
   
-  <select name="appointment_id" id="" name="appointment_id" class="form-control">
-      
-      </select>
+ 
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

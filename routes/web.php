@@ -79,8 +79,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
     Route::get('/appointment/create', [AppointmentController::class, 'create'])->name('appointment.create');
     Route::post('/appointment/store', [AppointmentController::class, 'store'])->name('appointment.store');
-    Route::get('/appointment/form', [AppointmentController::class, 'form'])->name('appointment.form');
-   
+    Route::get('/delete/{id}', [AppointmentController::class, 'delete'])->name('appointment.delete');
+    
 
     //Prescription
     Route::get('/prescription/list', [PrescriptionController::class, 'list'])->name('prescription.list');
