@@ -17,20 +17,28 @@
 
 
           <li><a class="nav-link scrollto" href="{{url('/')}}#contact">Contact</a></li>
-          @guest
-          <li><a class="nav-link scrollto" href="{{route('registration.form')}}">Registration</a></li>
+
+
+
+            @auth
+            @if (auth()->user()->role == 'Patient' or 'Doctor')
+
+
+          {{-- <li><a class="nav-link scrollto" href="#contact">{{auth()->user()->name}} </a></li> --}}
+          <li><a class="nav-link scrollto" href="{{route('frontend.logout')}}">Logout</a></li>
+
+        </ul>
+             @endif
+
+             @else
+             <li><a class="nav-link scrollto" href="{{route('registration.form')}}">Registration</a></li>
           <li>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
               Login
             </button>
           </li>
-          @endguest
-          @auth
 
-          <li><a class="nav-link scrollto" href="#contact">{{auth()->user()->name}} </a></li>
-          <li><a class="nav-link scrollto" href="{{route('frontend.logout')}}">Logout</a></li>
-          @endauth
-        </ul>
+             @endauth
 
 
       </nav>
@@ -45,7 +53,7 @@
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
       <h1>Welcome to ASM</h1>
-      
+
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
