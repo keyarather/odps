@@ -11,8 +11,6 @@
             <th scope="col">Qualification</th>
             <th scope="col">Phone</th>
             <th scope="col">Action</th>
-            <th scope="col">specialist_at</th>
-
         </tr>
     </thead>
     <tbody>
@@ -24,9 +22,10 @@
             <td>{{ $data->department }}</td>
             <td>{{ $data->qualification }}</td>
             <td>{{ $data->mobile_number }}</td>
-
-            <td>{{ $data->specialist->name}}</td>
-
+            <td>
+                <a href="{{route('doctor.edit',$data->id)}}" class="btn btn-success">Edit</a>
+                <a href="{{route('doctor.delete', $data->id)}}" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
         @endforeach
     </tbody>

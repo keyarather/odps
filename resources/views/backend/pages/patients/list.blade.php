@@ -11,7 +11,7 @@
                 <th scope="col">Department</th>
                 <th scope="col">Mobile</th>
                 <th scope="col">Email</th>
-                <th scope="col">Action</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -25,11 +25,7 @@
                 <td>{{$data->department_id}}</td>
                 <td>{{$data->mobile}}</td>
                 <td>{{$data->email}}</td>
-                <td>
-                    <a class="btn btn-primary" href="">View</a>
-                    <a class="btn btn-success" href="{{route('patient.edit',$data->id)}}">Edit</a>
-                    <a class="btn btn-danger" href="">Delete</a>
-                </td>
+                
             </tr>
             @endforeach
         </tbody>

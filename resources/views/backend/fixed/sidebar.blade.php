@@ -27,15 +27,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Specialist
                 </a>
-                <a class="nav-link" href="{{route('chamber.list')}}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    chamber
-                    
-                </a>
-                <a class="nav-link" href="{{route('payment.list') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Payment
-                </a>
+               
                 <a class="nav-link" href="{{route('department.list') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Department

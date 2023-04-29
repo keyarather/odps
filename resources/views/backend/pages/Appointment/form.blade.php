@@ -16,12 +16,12 @@
     </div>
   <div class="form-group">
     <label for="your phone">your phone</label>
-    <input type="tel" name="phone" class="your phone" id="exampleInputPassword1" placeholder="your phone">
+    <input type="tel" name="phone" class="form-control" id="exampleInputPassword1" placeholder="your phone">
 
   </div>
   <div class="form-group">
     <label for="">Date</label>
-    <input type="date" name="date" class="your phone" id="exampleInputPassword1" placeholder="your phone">
+    <input type="datetime-local" name="date" class="form-control" id="exampleInputPassword1" placeholder="your phone">
 
   </div>
   

@@ -15,7 +15,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="firstName">First Name</label>
-                    <input type="text" name="first_name" id="firstName" class="form-control form-control-lg" placeholder="Enter first name" />
+                    <input type="text" name="first_name" required id="firstName" class="form-control form-control-lg" placeholder="Enter first name" />
                   </div>
 
                 </div>
@@ -23,7 +23,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="lastName">Last Name</label>
-                    <input type="text" name="last_name" id="lastName" class="form-control form-control-lg" placeholder="Enter last name" />
+                    <input type="text" required name="last_name" id="lastName" class="form-control form-control-lg" placeholder="Enter last name" />
                   </div>
 
                 </div>
@@ -34,7 +34,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="emailAddress">Email</label>
-                    <input type="email" name="email" id="emailAddress" class="form-control form-control-lg" placeholder="example@gmail.com" />
+                    <input type="email" required name="email" id="emailAddress" class="form-control form-control-lg" placeholder="example@gmail.com" />
                   </div>
 
                 </div>
@@ -42,7 +42,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="phoneNumber">Phone Number</label>
-                    <input type="tel" name="phone" id="phoneNumber" class="form-control form-control-lg" placeholder="017xxxxxxxx" />
+                    <input type="tel" required name="phone" id="phoneNumber" class="form-control form-control-lg" placeholder="017xxxxxxxx" />
                   </div>
 
                 </div>
@@ -53,7 +53,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="emailAddress">Password</label>
-                    <input type="password" name="password" id="emailAddress" class="form-control form-control-lg" />
+                    <input type="password" required name="password" id="emailAddress" class="form-control form-control-lg" />
                   </div>
 
                 </div>
@@ -61,7 +61,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="phoneNumber">Birth Date</label>
-                    <input type="date" name="birthday" id="birthday" class="form-control form-control-lg" />
+                    <input type="date" required name="birthday" id="birthday" class="form-control form-control-lg" />
                   </div>
 
                 </div>

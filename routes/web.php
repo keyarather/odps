@@ -71,6 +71,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/doctor/store', [DoctorController::class, 'store'])->name('doctor.store');
     Route::get('/doctor/view/{id}', [DoctorController::class, 'view'])->name('doctor.view');
     Route::get('/doctor/delete/{id}', [DoctorController::class, 'delete'])->name('doctor.delete');
+    Route::get('/doctor/edit/{id}', [DoctorController::class, 'edit'])->name('doctor.edit');
+    Route::put('/doctor/update/{id}', [DoctorController::class, 'update'])->name('doctor.update');
 
     // doctor
 
@@ -80,6 +82,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/appointment/create', [AppointmentController::class, 'create'])->name('appointment.create');
     Route::post('/appointment/store', [AppointmentController::class, 'store'])->name('appointment.store');
     Route::get('/delete/{id}', [AppointmentController::class, 'delete'])->name('appointment.delete');
+    Route::put('/view/{id}', [AppointmentController::class, 'view'])->name('appointment.view');
+    Route::get('/edit/{id}', [AppointmentController::class, 'edit'])->name('appointment.edit');
+    Route::put('/update/{id}', [AppointmentController::class, 'update'])->name('appointment.update');
     
 
     //Prescription
