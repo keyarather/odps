@@ -22,7 +22,30 @@ class SpecialistController extends Controller
 
 
         Specialist::create([
-            "name" => $req->name
+            "name" => $req->name,
+            "status" => $req->status
+        ]);
+        return redirect()->route('specialist.list');
+    }
+
+    public function delete($id)
+    {
+        Specialist::findOrFail($id)->delete();
+        return redirect()->back();
+    }
+
+    public function edit($id)
+    {
+        $info = Specialist::find($id);
+        return view('backend.pages.specialist.edit', compact('info'));
+    }
+
+    public function update(Request $req, $id)
+    {
+        $info = Specialist::find($id);
+        $info->update([
+            "name" => $req->name,
+            "status" => $req->status
         ]);
         return redirect()->route('specialist.list');
     }

@@ -5,12 +5,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">SL</th>
 
       <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">status</th>
-      
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -21,11 +19,9 @@
 
       <td>{{$data->name}}</td>
       <td>{{$data->status}}</td>
-      <td>{{$data->specialist_at}}</td>
       <td>
-        <a href="" class="btn btn-primary">view</a>
-        <a href="" class="btn btn-primary">Delete</a>
-        <a href="" class="btn btn-primary">Edit</a>
+        <a href="{{route('specialist.delete',$data->id)}}" class="btn btn-primary">Delete</a>
+        <a href="{{route('specialist.edit', $data->id)}}" class="btn btn-primary">Edit</a>
       </td>
 
     </tr>

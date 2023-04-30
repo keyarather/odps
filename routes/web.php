@@ -99,6 +99,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     //specialist
     Route::get('/specialist/list', [SpecialistController::class, 'list'])->name("specialist.list");
+    Route::get('/specialist/delete/{id}', [SpecialistController::class, 'delete'])->name("specialist.delete");
+    Route::get('/specialist/edit/{id}', [SpecialistController::class, 'edit'])->name("specialist.edit");
+    Route::put('/specialist/update/{id}', [SpecialistController::class, 'update'])->name("specialist.update");
 
     Route::get('/specialist/form', [SpecialistController::class, 'form'])->name("specialist.form");
     Route::post('/specialist/store', [SpecialistController::class, 'store'])->name("specialist.store");

@@ -11,7 +11,7 @@
 
   <div class="form-group">
     <label for="">Select Status</label>
-    <select name="status">
+    <select name="status" class="form-control">
 
       <option value="active">Active</option>
       <option value="inactive">Inactive</option>
@@ -20,7 +20,7 @@
   </div>
 
 
-  <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" value="submit" class="btn btn-primary mt-3">Submit</button>
 
 </form>
 

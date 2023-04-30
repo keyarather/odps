@@ -19,10 +19,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Appointment
                 </a>
-                <a class="nav-link" href="{{route('prescription.list') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Prescription
-                </a>
+                
                 <a class="nav-link" href="{{route('specialist.list')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Specialist
