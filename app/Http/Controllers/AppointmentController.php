@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\ApproveReject;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
@@ -20,15 +21,15 @@ class AppointmentController extends Controller
     }
     public function store(request $request)
     {
-        //dd($request->all())
+        //dd($request->all());
         $request->validate(
             [
-            'name'=>'required',
-            'email'=>'required',
-            'phone'=>'required',
-            'date'=>'required|after:start_date_field|before:end_date_field'
-        ]
-    );
+                'name' => 'required',
+                'email' => 'required|unique:users',
+                'phone' => 'required',
+                'date' => 'required'
+            ]
+        );
 
         Appointment::create([
             "name" => $request->name,
@@ -37,8 +38,8 @@ class AppointmentController extends Controller
             "date" => $request->date,
         ]);
 
-
-        return redirect()->back()->with('Success','Registration Success');
+        toastr()->success('Appointment Success');
+        return redirect()->back();
     }
     public function delete($id)
     {
@@ -55,12 +56,39 @@ class AppointmentController extends Controller
     {
         $edit = Appointment::find($id);
         $edit->update([
-                "name" => $request->name,
-                "email" => $request->email,
-                "phone" => $request->phone,
-                "date" => $request->date,
+            "name" => $request->name,
+            "email" => $request->email,
+            "phone" => $request->phone,
+            "date" => $request->date,
         ]);
 
         return redirect()->route('appointment.list');
     }
+
+
+
+    public function approve($id)
+    {
+        //dd($id);
+        $appoint = Appointment::findOrFail($id);
+        $appoint->update([
+            "status" => 'approved',
+        ]);
+        toastr()->success(' approved');
+        return redirect()->back();
+    }
+    public function reject($id)
+    {
+        //dd($id);
+
+        $appoint = Appointment::find($id)->update([
+            'status' => 'rejected'
+        ]);
+
+        toastr()->success('approved');
+        return redirect()->back();
+    }
+
+   
+
 }

@@ -66,6 +66,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Doctor
     Route::get('/dashboard', [DashboardController::class, 'dashboardView']);
+    Route::get('/dashboard/home', [DashboardController::class, 'dashboardhome'])->name('dash.home');
     Route::get('/doctor/list', [DoctorController::class, 'list'])->name('doctor.list');
     Route::get('/doctor/create', [DoctorController::class, 'create'])->name('doctor.create');
     Route::post('/doctor/store', [DoctorController::class, 'store'])->name('doctor.store');
@@ -76,6 +77,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     // doctor
 
+    Route::get('/approve/{id}',[AppointmentController::class,'approve'])->name('approve');
+    Route::get('/reject/{id}',[AppointmentController::class,'reject'])->name('reject');
+    Route::post('/request/{id}',[AppointmentController::class,'request'])->name('request');
+
     //Appointment
 
     Route::get('/appointment/list', [AppointmentController::class, 'list'])->name('appointment.list');
@@ -85,7 +90,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/view/{id}', [AppointmentController::class, 'view'])->name('appointment.view');
     Route::get('/edit/{id}', [AppointmentController::class, 'edit'])->name('appointment.edit');
     Route::put('/update/{id}', [AppointmentController::class, 'update'])->name('appointment.update');
-    
+
 
     //Prescription
     Route::get('/prescription/list', [PrescriptionController::class, 'list'])->name('prescription.list');

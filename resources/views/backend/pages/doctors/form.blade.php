@@ -8,15 +8,15 @@
     @csrf
     <div class="form-group">
       <label for="name">Doctor Name</label>
-      <input type="name" name="name" class="form-control" id="name" placeholder=" Name">
+      <input type="name" required name="name" class="form-control" id="name" placeholder=" Name">
     </div>
     <div class="form-group">
       <label for="image">image</label>
-      <input type="file" name="image" class="form-control" id="image" placeholder=" image">
+      <input type="file" required name="image" class="form-control" id="image" placeholder=" image">
     </div>
     <div class="form-group">
       <label for="department">Department</label>
-      <input type="department" name="department" class="form-control" id="department" placeholder="department">
+      <input type="department" required name="department" class="form-control" id="department" placeholder="department">
     </div>
 
     <div class="form-group">
@@ -30,11 +30,11 @@
     </div>
     <div class="form-group">
       <label for="qualification">Qualification</label>
-      <input type="department" name="qualification" class="form-control" id="department" placeholder="department">
+      <input type="department" required name="qualification" class="form-control" id="department" placeholder="department">
     </div>
     <div class="form-group">
       <label for="mobile_number">mobile_number</label>
-      <input type="number" name="mobile_number" class="form-control" id="mobile_number" placeholder="mobile_number">
+      <input type="tel" required name="mobile_number" class="form-control" id="mobile_number" placeholder="mobile_number">
     </div>
 
 

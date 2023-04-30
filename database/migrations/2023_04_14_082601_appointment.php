@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('date');
-          
-
+            $table->string("status")->default("pending");
             $table->rememberToken();
             $table->timestamps();
         });
@@ -27,7 +26,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-        public function down(): void
+    public function down(): void
     {
         Schema::dropIfExists('appointments');
     }
