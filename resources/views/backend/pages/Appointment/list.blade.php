@@ -25,8 +25,14 @@
             <td>{{$data->date}}</td>
             <td>{{$data->status}}</td>
             <td>
-            <a class="btn btn-info" href="{{route('approve', $data->id)}}">Approve</a>
-            <a class="btn btn-danger" href="{{route('reject', $data->id)}}">Decline</a>
+                @if($data->status=='approved')
+                    Already Approved
+                @elseif($data->status=='rejected')
+                    Already Rejeced
+                @else
+                <a class="btn btn-info" href="{{route('approve', $data->id)}}">Approve</a>
+                <a class="btn btn-danger" href="{{route('reject', $data->id)}}">Decline</a>
+                @endif
             <!-- <a class="btn btn-success" href="{{route('appointment.view', $data->id)}}">view</a> -->
             </td>
 
