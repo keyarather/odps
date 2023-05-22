@@ -10,6 +10,7 @@
             <th scope="col">Department</th>
             <th scope="col">Qualification</th>
             <th scope="col">Phone</th>
+            <th scope="col">Image</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -19,9 +20,10 @@
         <tr>
             <th scope="row">{{ $data->id }}</th>
             <td>{{ $data->name }}</td>
-            <td>{{ $data->department }}</td>
+            <td>{{ $data->Department->name }}</td>
             <td>{{ $data->qualification }}</td>
             <td>{{ $data->mobile_number }}</td>
+            <td>{{$data->image}}</td> 
             <td>
                 <a href="{{route('doctor.edit',$data->id)}}" class="btn btn-success">Edit</a>
                 <a href="{{route('doctor.delete', $data->id)}}" class="btn btn-danger">Delete</a>

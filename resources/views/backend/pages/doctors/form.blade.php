@@ -4,7 +4,7 @@
 
 
 
-  <form action={{route('doctor.store')}} method='post' enctype="multipart/form-data">
+  <form action="{{route('doctor.store')}}" method='post' enctype="multipart/form-data">
     @csrf
     <div class="form-group">
       <label for="name">Doctor Name</label>
@@ -14,10 +14,18 @@
       <label for="image">image</label>
       <input type="file" required name="image" class="form-control" id="image" placeholder=" image">
     </div>
+
     <div class="form-group">
-      <label for="department">Department</label>
-      <input type="department" required name="department" class="form-control" id="department" placeholder="department">
-    </div>
+    <label for="department">Select department</label>
+                    <select name="department" required id="department" class="form-select">
+                      @foreach($department as $depart)
+                        <option value="{{$depart->id}}">{{$depart->name}}</option>
+                        @endforeach
+                    </select>
+                    <div class="validate"></div>
+                </div>
+
+   
 
     <div class="form-group">
       <label for="specialist_at">Select specialist at</label>
@@ -30,7 +38,7 @@
     </div>
     <div class="form-group">
       <label for="qualification">Qualification</label>
-      <input type="department" required name="qualification" class="form-control" id="department" placeholder="department">
+      <input type="qualification" required name="qualification" class="form-control" id="qualification" placeholder="qualification">
     </div>
     <div class="form-group">
       <label for="mobile_number">mobile_number</label>

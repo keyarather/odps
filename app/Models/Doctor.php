@@ -14,4 +14,9 @@ class Doctor extends Model
     {
         return $this->belongsTo(Specialist::class);
     }
+
+    public function Department()
+    {
+        return $this->belongsTo(Department::class, 'department', 'id');
+    }
 }

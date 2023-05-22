@@ -10,39 +10,36 @@
         <ul>
 
           <li><a class="nav-link scrollto active" href="{{url('/')}}#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="{{url('/')}}#about">About</a></li>
-          <li><a class="nav-link scrollto" href="{{url('/')}}#departments">Departments</a></li>
+          
+          
           <li><a class="nav-link scrollto" href="{{url('/')}}#doctors">Doctors</a></li>
+          @auth
+          <li><a class="nav-link scrollto" href="{{route('history')}}">patient profile</a></li>
+          @endauth
+
 
 
 
           <li><a class="nav-link scrollto" href="{{url('/')}}#contact">Contact</a></li>
 
 
-
-            @auth
-            @if (auth()->user()->role == 'Patient' or 'Doctor')
+          @auth
 
 
-          {{-- <li><a class="nav-link scrollto" href="#contact">{{auth()->user()->name}} </a></li> --}}
-          <li><a class="nav-link scrollto" href="{{route('frontend.logout')}}">Logout</a></li>
-
-        </ul>
-             @endif
-
-             @else
-             <li><a class="nav-link scrollto" href="{{route('registration.form')}}">Registration</a></li>
-          <li>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<a href="{{route('user.profile')}}" class="nav-item nav-link">
+    {{auth()->user()->name}}</a>
+ <a href="{{route('frontend.logout')}}" class="nav-item nav-link">Logout</a>
+@else
+<a class="nav-link scrollto" href="{{route('registration.form')}}">Registration</a>
+<a href="" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
               Login
-            </button>
-          </li>
-
-             @endauth
+</a>
+            @endauth       
 
 
       </nav>
       <!-- .navbar -->
+      <a href="" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span></a>
 
       <a href="{{url('/')}}#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
 
@@ -54,7 +51,7 @@
     <div class="container">
       <h1>Welcome to ASM</h1>
 
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <a href="#about" class="btn-get-started scrollto"></a>
     </div>
   </section><!-- End Hero -->
 
@@ -83,8 +80,9 @@
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">login</button>
+           
           </div>
         </form>
       </div>

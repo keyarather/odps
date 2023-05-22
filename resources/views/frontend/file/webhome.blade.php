@@ -52,41 +52,7 @@
     </div>
 </section><!-- End Why Us Section -->
 <!-- ======= About Section ======= -->
-<section id="about" class="about" style="margin-top: 50px;">
-    <div class="container-fluid">
 
-        <div class="row">
-            <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-                <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
-            </div>
-
-            <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                <h3></h3>
-                <p> Cardiology is a medical specialty and a branch of internal medicine concerned with disorders of the heart. It deals with the diagnosis and treatment of such conditions  electrophysiology, heart failure and valvular heart disease</p>
-
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                </div>
-
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-gift"></i></div>
-                    <h4 class="title"><a href="">Nemo Enim</a></h4>
-                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                </div>
-
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-atom"></i></div>
-                    <h4 class="title"><a href="">Dine Pad</a></h4>
-                    <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-</section><!-- End About Section -->
 
 <!-- ======= Counts Section ======= -->
 <section id="counts" class="counts">
@@ -206,6 +172,17 @@
         </div>
 
         <form action="{{route('appointment.store')}}" method="post" role="form">
+        @if($errors->any())
+        @foreach($errors->all() as $error)
+          <p class="alert alert-danger">{{$error}}</p>
+        @endforeach
+    @endif
+
+    @if(session()->has('message'))
+    <p class="alert alert-success">{{session()->get('message')}}</p>
+    @endif
+
+
             @csrf
             <div class="row">
                 <div class="col-md-4 form-group">
@@ -223,20 +200,40 @@
             </div>
             <div class="row">
                 <div class="col-md-4 form-group mt-3">
-                    <input type="datetime" required name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                    <input type="date" required name="date" class="form-control" id="" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                     <div class="validate"></div>
                 </div>
+
+                <div class="timeslot">
+
                 <div class="col-md-4 form-group mt-3">
-                    <select name="department" required id="department" class="form-select">
+                    <select type="text" name="time_slot" required id="time_slot" class="form-select">
+                        <option value="">Select Time Slot</option>
+                        <option value="10:00 am - 10:15 am">10:00 am - 10:15 am</option>
+                        <option value="10:20 am - 10:35 am">10:20 am - 10:35 am</option>
+                        <option value="10:40 am - 10:55 am">10:40 am - 10:55 am</option>
+                        <option value="11:00 am - 11:15 am">11:00 am - 11:15 am</option>
+                        <option value="11:20 am - 11:35 am">11:20 am - 11:35 am</option>
+                        <option value="11:40 am - 11:55 am">11:40 am - 11:55 am</option>
+                        <option value="12:00 pm - 12:15 pm">12:00 pm - 12:15 pm</option>
+                        <option value="12:20 pm - 12:35 pm">12:20 pm - 12:35 pm</option>
+                        <option value="12:40 pm - 12:55 pm">12:40 pm - 12:55 pm</option>
+                        
+                    </select>
+                    <div class="validate"></div>
+                </div>
+
+                <div class="col-md-4 form-group mt-3">
+                    <select name="department_id" required id="department_id" class="form-select">
                         <option value="">Select Department</option>
-                        <option value="Department 1">Department 1</option>
-                        <option value="Department 2">Department 2</option>
-                        <option value="Department 3">Department 3</option>
+                        @foreach($department as $depart)
+                        <option value="{{$depart->id}}">{{$depart->name}}</option>
+                        @endforeach
                     </select>
                     <div class="validate"></div>
                 </div>
                 <div class="col-md-4 form-group mt-3">
-                    <select name="doctor" id="doctor" class="form-select">
+                    <select name="doctor_id" id="doctor" class="form-select">
                         <option value="">Select Doctor</option>
                         @foreach($doctors as $doctor)
                         <option value="{{$doctor->id}}">{{$doctor->name}}</option>
@@ -254,103 +251,7 @@
     </div>
 </section><!-- End Appointment Section -->
 
-<!-- ======= Departments Section ======= -->
-<section id="departments" class="departments">
-    <div class="container">
 
-        <div class="section-title">
-            <h2>Departments</h2>
-            <p>A distinct part of anything arranged in divisions; a division of a complex whole or organized system. one of the principal branches of a governmental organization: the sanitation department.</p>
-        </div>
-
-        <div class="row gy-4">
-            <div class="col-lg-3">
-                <ul class="nav nav-tabs flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Cardiology</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Neurology</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Hepatology</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Pediatrics</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Eye Care</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-9">
-                <div class="tab-content">
-                    <div class="tab-pane active show" id="tab-1">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 details order-2 order-lg-1">
-                                <h3>Cardiology</h3>
-                                <p class="fst-italic">A new word that is coined especially by a person affected with schizophrenia, is meaningless except to the coineA</p>
-                                <p>Hepatology is a branch of medicine concerned with the study, prevention, diagnosis, and management of diseases</p>
-                            </div>
-                            <div class="col-lg-4 text-center order-1 order-lg-2">
-                                <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="tab-2">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 details order-2 order-lg-1">
-                                <h3>Et blanditiis nemo veritatis excepturi</h3>
-                                <p class="fst-italic">the use of a new word or expression or of an established word in a new or different sense : the use of new expressions that are not sanctioned by conventional standard usage : the introduction of such expressions into a language.</p>
-                                <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
-                            </div>
-                            <div class="col-lg-4 text-center order-1 order-lg-2">
-                                <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="tab-3">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 details order-2 order-lg-1">
-                                <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                                <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                                <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
-                            </div>
-                            <div class="col-lg-4 text-center order-1 order-lg-2">
-                                <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="tab-4">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 details order-2 order-lg-1">
-                                <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                                <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                                <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
-                            </div>
-                            <div class="col-lg-4 text-center order-1 order-lg-2">
-                                <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="tab-5">
-                        <div class="row gy-4">
-                            <div class="col-lg-8 details order-2 order-lg-1">
-                                <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                                <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                                <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
-                            </div>
-                            <div class="col-lg-4 text-center order-1 order-lg-2">
-                                <img src="assets/img/departments-5.jpg" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section><!-- End Departments Section -->
 
 <!-- ======= Doctors Section ======= -->
 <section id="doctors" class="doctors">
@@ -358,25 +259,21 @@
 
         <div class="section-title">
             <h2>Doctors</h2>
-            <p></p>
+            <p><a href="{{route('appointment.create')}}"></a></p>
         </div>
 
-        <div class="row">
+        <div class="row" >
 
             @foreach($doctors as $doctor)
             <div class="col-lg-6">
                 <div class="member d-flex align-items-start">
-                    <div class="pic"><img src="{{url('uploads/update/doctor',$doctor->image)}}" class="img-fluid" alt=""></div>
+                    <div class="pic"><img src="{{url('/update/doctor',$doctor->image)}}" class="img-fluid" alt="image"></div>
                     <div class="member-info">
-                        <h4>{{$doctor->name}}</h4>
+                    <a href="{{route('appointment.store')}}">{{$doctor->name}}</a>  
+                     
                         <span>{{$doctor->department}}</span>
                         <p>{{$doctor->qualification}}</p>
-                        <div class="social">
-                            <a href=""><i class="ri-twitter-fill"></i></a>
-                            <a href=""><i class="ri-facebook-fill"></i></a>
-                            <a href=""><i class="ri-instagram-fill"></i></a>
-                            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                        </div>
+                     
                     </div>
                 </div>
             </div>
@@ -412,7 +309,7 @@
                     <div class="email">
                         <i class="bi bi-envelope"></i>
                         <h4>Email:</h4>
-                        <p>info@example.com</p>
+                        <p>keya@gmail.com</p>
                     </div>
 
                     <div class="phone">
@@ -447,7 +344,7 @@
                         <div class="error-message"></div>
                         <div class="sent-message">Your message has been sent. Thank you!</div>
                     </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                    <div class="text-front"><button type="submit">Send Message</button></div>
                 </form>
 
             </div>

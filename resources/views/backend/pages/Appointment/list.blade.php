@@ -9,10 +9,14 @@
                     <th scope="col">Id</th>
                     <th scope="col">name</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
                     <th scope="col">Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">phone</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Time Slot</th>
+                    <th scope="col">Doctor</th>
+                     <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+
                 </tr>
     </thead>
     <tbody>
@@ -21,9 +25,14 @@
             <th scope="row">{{$key+1}}</th>
             <td>{{$data->name}}</td>
             <td>{{$data->email}}</td>
-            <td>{{$data->phone}}</td>
             <td>{{$data->date}}</td>
+            <td>{{$data->phone}}</td>
+            <td>{{$data->Department->name}}</td>
+            <td>{{$data->time_slot}}</td>
+            <td>{{$data->Doctor->name}}</td>
+            
             <td>{{$data->status}}</td>
+            
             <td>
                 @if($data->status=='approved')
                     Already Approved

@@ -5,7 +5,7 @@ use App\Http\Controllers\Frontend\HomeController;
 
 //Backend
 use App\Http\Controllers\DoctorController;
-use App\Http\Controllers\loginController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PatientController;
 use  App\Http\Controllers\paymentController;
@@ -35,11 +35,11 @@ Route::get('/login', [DashboardController::class, 'login'])->name('login');
 Route::post('/dologin', [DashboardController::class, 'dologin'])->name('dologin');
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 //for frontend login
-Route::get('/loginfront', [loginController::class, 'loginfront'])->name('loginfront');
+Route::get('/loginfront', [LoginController::class, 'loginfront'])->name('loginfront');
 Route::post('/loginfront', [DashboardController::class, 'loginfront'])->name('loginfront');
-Route::get('froontend-logout', [loginController::class, 'logout'])->name('frontend.logout');
+Route::get('froontend-logout', [LoginController::class, 'logout'])->name('frontend.logout');
 
-Route::post('/loginform', [loginController::class, 'loginfront'])->name('loginform');
+Route::post('/loginform', [LoginController::class, 'loginfront'])->name('loginform');
 
 
 Route::get('/dologinfront', [DashboardController::class, 'loginfront'])->name('loginfront');
@@ -61,6 +61,11 @@ Route::post('/registration/form', [HomeController::class, 'registrationformshow'
 
 //for auth
 Route::group(['middleware' => 'auth'], function () {
+
+    //for profile
+    Route::get('/profile',[HomeController::class,'profile'])->name('user.profile');
+    Route::put('/profile/update',[HomeController::class,'updateProfile'])->name('profile.update');
+
     Route::get('/home', [DashboardController::class, 'dashboard'])->name('home');
 
 
@@ -80,6 +85,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/approve/{id}',[AppointmentController::class,'approve'])->name('approve');
     Route::get('/reject/{id}',[AppointmentController::class,'reject'])->name('reject');
     Route::post('/request/{id}',[AppointmentController::class,'request'])->name('request');
+    //profile appointment history
+    Route::get('/appointment/history',[AppointmentController::class,'history'])->name('history');
 
     //Appointment
 
@@ -137,6 +144,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Patient
     Route::group(['prefix' => 'patient'], function () {
+
         Route::get('/list', [PatientController::class, 'list'])->name('patient.list');
         Route::get('/create', [PatientController::class, 'create'])->name('patient.create');
         Route::post('/store', [patientController::class, 'store'])->name('patient.store');

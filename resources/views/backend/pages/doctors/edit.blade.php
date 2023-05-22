@@ -15,10 +15,15 @@
             <label for="image">Image</label>
             <input type="file" name="image" class="form-control" id="image" >
         </div>
-        <div class="form-group">
-            <label for="department">Department</label>
-            <input type="department" name="department" value="{{$doctorInfo->department}}" class="form-control" id="department" placeholder="department">
-        </div>
+
+        <div class="col-md-4 form-group mt-3">
+                    <select name="department" required id="department" class="form-select">
+                      @foreach($department as $depart)
+                        <option value="{{$depart->id}}">{{$depart->name}}</option>
+                        @endforeach
+                    </select>
+                    <div class="validate"></div>
+                </div>
 
         <div class="form-group">
             <label for="specialist_at">Select Specialist at</label>

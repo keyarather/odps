@@ -17,7 +17,11 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('date');
-            $table->string("status")->default("pending");
+            $table->string('time_slot');
+            $table->foreignId('doctor_id')->constrained();
+
+            $table->foreignId('department_id')->constrained();
+            $table->string("status")->default("pending")->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

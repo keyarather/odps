@@ -9,4 +9,8 @@ class Department extends Model
 {
     use HasFactory;
     protected $guarded =[];
+
+    public function Appointment(){
+        return $this->belongsTo(Appointment::class,);
+    }
 }

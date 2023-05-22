@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Patient;
 use App\Models\Department;
 use Illuminate\Http\Request;
@@ -12,8 +13,10 @@ class PatientController extends Controller
 {
     public function list()
     {
-        $patients = Patient::all();
+        
+        $patients = Appointment::where('status','approved')->get();
         return view('backend.pages.patients.list', compact('patients'));
+        
     }
     public function create()
     {
@@ -22,17 +25,12 @@ class PatientController extends Controller
     }
     public function store(Request $request)
     {
-        $filename = null;
-        if ($request->hasfile('image')) {
-            $file = $request->file('image');
-            $filename = date('ymdhis') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('/update/category', $filename);
-        }
-        Patient::create([
+        
+      
+        Appointment::create([
             'name' => $request->name,
             'department_id' => $request->department_id,
             'mobile' => $request->mobile,
-            'image' => $filename,
             'email' => $request->email
 
         ]);

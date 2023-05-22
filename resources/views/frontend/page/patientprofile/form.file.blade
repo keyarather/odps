@@ -1,16 +1,6 @@
 @extends('frontend.file.master')
 @section('content')
-<form action="{{route('registrationformshow')}}" method='post' class="vh-100 gradient-custom">
-@if($errors->any())
-        @foreach($errors->all() as $error)
-          <p class="alert alert-danger">{{$error}}</p>
-        @endforeach
-    @endif
-
-    @if(session()->has('message'))
-    <p class="alert alert-success">{{session()->get('message')}}</p>
-    @endif   
-
+<form action="{{route('appointmenthistories')}}" method='post' class="vh-100 gradient-custom">
   @csrf
   <div class="container py-5 h-100">
     <div class="row justify-content-center align-items-center h-100">
@@ -24,15 +14,15 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <label class="form-label" for="firstName">First Name</label>
-                    <input type="text" name="first_name" required id="firstName" class="form-control form-control-lg" placeholder="Enter first name" />
+                    <label class="form-label" for="firstName">Name</label>
+                    <input type="text" name="name" required id="firstName" class="form-control form-control-lg" placeholder="Enter first name" />
                   </div>
 
                 </div>
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <label class="form-label" for="lastName">Last Name</label>
+                    <label class="form-label" for="">status</label>
                     <input type="text" required name="last_name" id="lastName" class="form-control form-control-lg" placeholder="Enter last name" />
                   </div>
 
@@ -51,7 +41,7 @@
                 <div class="col-md-6 mb-4 pb-2">
 
                   <div class="form-outline">
-                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                    <label class="form-label" for="phoneNumber">Phone</label>
                     <input type="tel" required name="phone" id="phoneNumber" class="form-control form-control-lg" placeholder="017xxxxxxxx" />
                   </div>
 
@@ -91,7 +81,7 @@
                 </div>
                 <div class="col-md-6 mb-4 pb-2">
 
-                  <div class="form-outline">
+                <div class="form-outline">
                     <label class="form-label" for="emailAddress">Role</label>
                     <select name="role" id="role" class="form-control">
                       <option value="patient">Patient</option>
@@ -113,5 +103,6 @@
     </div>
   </div>
 </form>
+
 
 @endsection

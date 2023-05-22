@@ -7,6 +7,7 @@ use App\Models\Appointment;
 use App\Models\Doctor;
 use App\Models\Patient;
 use App\Models\Specialist;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -58,7 +59,7 @@ class DashboardController extends Controller
 
     public function dashboardhome(){
 
-        $totalPataint = Patient::all()->count();
+        $totalPataint = Appointment::where('status', 'approved')->get()->count();
         $totalAppointment = Appointment::all()->count();
         $totalDoctor = Doctor::all()->count();
         $totalSpecialist = Specialist::all()->count();

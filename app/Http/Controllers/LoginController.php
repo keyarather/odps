@@ -11,18 +11,20 @@ class LoginController extends Controller
     {
 
         $credential = $request->except('_token');
+       
         if (auth()->attempt($credential)) {
+            toastr()->success('Login Success');
+           
             return redirect()->back();
         }
-        toastr()->success('Login Success');
+        toastr()->error('Login failed.');
+       
         return redirect()->back();
     }
 
 
     public function logout(){
-
-
-        auth()->logout();
+           auth()->logout();
         toastr()->success('Logout Success');
 
         return redirect()->back();
