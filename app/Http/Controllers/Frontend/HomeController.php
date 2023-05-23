@@ -30,7 +30,7 @@ class HomeController extends Controller
         $request -> validate([
             "first_name" => 'required',
             "last_name" => 'required',
-            "birthday" => 'after:01/01/1950|before:05/20/2023',
+            "birthday" => 'after:01/01/1950|before:05/25/2023',
             "gender" => 'required',
             "email" => 'required',
             "phone" => 'required',

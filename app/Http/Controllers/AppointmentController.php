@@ -115,7 +115,9 @@ class AppointmentController extends Controller
     public function history(){
         
         
-        $patientprofile=Appointment::where('email',auth ()->user()->email)->where('status',"approved")->get();
+        
+        $patientprofile=Appointment::where('email', auth()->user()->email)->where('status',"approved")->get();
+        // dd($patientprofile);
         
         return view('frontend.page.patientprofile.table',compact('patientprofile'));
     } 

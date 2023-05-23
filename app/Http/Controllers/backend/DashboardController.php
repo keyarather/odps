@@ -53,7 +53,7 @@ class DashboardController extends Controller
 
         toastr()->success('Logout Success');
 
-        return redirect()->route('home');
+        return redirect()->route('website');
 
     }
 

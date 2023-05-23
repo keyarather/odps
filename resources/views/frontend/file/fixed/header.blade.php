@@ -39,7 +39,7 @@
 
       </nav>
       <!-- .navbar -->
-      <a href="" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span></a>
+     
 
       <a href="{{url('/')}}#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
 

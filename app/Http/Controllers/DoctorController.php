@@ -27,7 +27,7 @@ class DoctorController extends Controller
         if ($request->hasfile('image')) {
             $file = $request->file('image');
             $filename = date('ymdhis') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('/uploads/update/doctor', $filename);
+            $file->storeAs('/update/doctor', $filename);
         }
 
         Doctor::create([
@@ -72,7 +72,7 @@ class DoctorController extends Controller
             File::delete($remove);
             $file = $request->file('image');
             $filename = date('ymdhis') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('/update/doctor', $filename);
+            $file->storeAs('/update/doctor/', $filename);
         }
 
         $doctorInfo->update([

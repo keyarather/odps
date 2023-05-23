@@ -267,7 +267,7 @@
             @foreach($doctors as $doctor)
             <div class="col-lg-6">
                 <div class="member d-flex align-items-start">
-                    <div class="pic"><img src="{{url('/update/doctor',$doctor->image)}}" class="img-fluid" alt="image"></div>
+                    <div class="pic"><img src="{{url('/uploads/update/doctor/',$doctor->image)}}" class="img-fluid" alt="image"></div>
                     <div class="member-info">
                     <a href="{{route('appointment.store')}}">{{$doctor->name}}</a>  
                      

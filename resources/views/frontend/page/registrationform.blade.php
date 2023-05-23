@@ -1,6 +1,9 @@
 @extends('frontend.file.master')
 @section('content')
-<form action="{{route('registrationformshow')}}" method='post' class="vh-100 gradient-custom">
+
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+    <form action="{{route('registrationformshow')}}" method='post' class="vh-100 gradient-custom">
 @if($errors->any())
         @foreach($errors->all() as $error)
           <p class="alert alert-danger">{{$error}}</p>
@@ -12,8 +15,6 @@
     @endif   
 
   @csrf
-  <div class="container py-5 h-100">
-    <div class="row justify-content-center align-items-center h-100">
       <div class="col-12 col-lg-9 col-xl-7">
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
@@ -110,8 +111,9 @@
           </div>
         </div>
       </div>
+      </form>
+
     </div>
   </div>
-</form>
 
 @endsection
