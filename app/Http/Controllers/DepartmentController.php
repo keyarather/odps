@@ -46,9 +46,9 @@ class DepartmentController extends Controller
         return to_route('department.list');
     }
 
-    public function delete($id)
-    {
-        $delete = Department::findOrFail($id)->delete();
-        return to_route('department.list');
-    }
+    // public function delete($id)
+    // {
+    //     $delete = Department::findOrFail($id)->delete();
+    //     return to_route('department.list');
+    // }
 }

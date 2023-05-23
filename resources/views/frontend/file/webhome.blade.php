@@ -271,7 +271,7 @@
                     <div class="member-info">
                     <a href="{{route('appointment.store')}}">{{$doctor->name}}</a>  
                      
-                        <span>{{$doctor->department}}</span>
+                        <span>{{$doctor->Department->name}}</span>
                         <p>{{$doctor->qualification}}</p>
                      
                     </div>
@@ -290,7 +290,7 @@
 
         <div class="section-title">
             <h2>Contact</h2>
-            <p></p>
+            <p>Thank you for choosing to be part of our community at Appointment System Management . We are committed to protecting your personal information and your right to privacy.</p>
         </div>
     </div>
 
@@ -322,7 +322,7 @@
 
             </div>
 
-            <div class="col-lg-8 mt-5 mt-lg-0">
+            <!-- <div class="col-lg-8 mt-5 mt-lg-0">
 
                 <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                     <div class="row">
@@ -347,7 +347,7 @@
                     <div class="text-front"><button type="submit">Send Message</button></div>
                 </form>
 
-            </div>
+            </div> -->
 
         </div>
 
